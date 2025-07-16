@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dynamic Weather App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="navbar">
+    <h1>🌦️ WeatherNow</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">About</a>
+    </nav>
+  </header>
+
+  <!-- Search Box -->
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="Enter city name...">
+    <button id="searchBtn">Search</button>
+  </div>
+
+  <!-- Main Weather Card -->
+  <div class="weather-card">
+    <div>
+      <h2 id="location">--</h2>
+      <h1 id="temp">--°C</h1>
+      <p id="condition">--</p>
+    </div>
+    <img id="icon" src="" alt="Weather icon" />
+  </div>
+
+  <!-- Extra Weather Details -->
+  <div class="details">
+    <p>Humidity: --%</p>
+    <p>Wind: -- km/h</p>
+    <p>Feels Like: --°C</p>
+  </div>
+
+  <!-- Hourly Forecast Grid -->
+  <div class="forecast-grid" id="forecastGrid"></div>
+
+  <!-- Script -->
+  <script src="logic.js"></script>
+</body>
+</html>

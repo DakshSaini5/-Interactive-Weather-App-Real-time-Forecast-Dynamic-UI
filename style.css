@@ -1,0 +1,244 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  padding: 20px;
+  color: #222;
+  transition: background 0.4s ease, color 0.3s ease;
+}
+
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 32px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  color: white;
+  margin-bottom: 30px;
+}
+
+.navbar h1 {
+  font-size: 1.7rem;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+
+.navbar nav {
+  display: flex;
+  gap: 20px;
+}
+
+
+.navbar nav a {
+  position: relative;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.navbar nav a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: white;
+  transition: width 0.3s ease;
+}
+
+.navbar nav a:hover {
+  color: #ffdd57;
+}
+
+.navbar nav a:hover::after {
+  width: 100%;
+}
+
+.search-box {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.search-box input {
+  padding: 12px;
+  width: 50%;
+  border: 1px solid #ccc;
+  border-radius: 25px 0 0 25px;
+  outline: none;
+  font-size: 1rem;
+}
+
+.search-box button {
+  padding: 12px 20px;
+  border: none;
+  background: #007bff;
+  color: white;
+  border-radius: 0 25px 25px 0;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+
+.weather-card,
+.forecast-card,
+.details p {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  color: #fff;
+}
+
+
+.weather-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.weather-card h2 {
+  font-size: 1.5rem;
+}
+
+.weather-card img {
+  height: 80px;
+}
+
+.weather-card h1 {
+  font-size: 3rem;
+  margin: 10px 0;
+}
+
+
+.details {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+  gap: 15px;
+}
+
+
+.forecast-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 15px;
+}
+
+.forecast-card img {
+  height: 40px;
+}
+
+
+.weather-card h1,
+.weather-card h2,
+.weather-card p,
+.details p,
+.forecast-card p {
+  color: #ffffff;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+
+.weather-card,
+.details p,
+.forecast-card {
+  animation: glowIn 0.6s ease;
+}
+
+@keyframes glowIn {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  filter: brightness(0.8) blur(2px);
+  transition: background-image 0.5s ease;
+}
+
+
+body.weather-clear {
+  background: url("Climate/clear.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
+body.weather-cloudy {
+  background: url("Climate/partly cloudy.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
+body.weather-rain {
+  background: url("Climate/rainy.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
+body.weather-snow {
+  background: url("Climate/snow.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
+body.weather-thunder {
+  background: url("Climate/thunder.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
+body.weather-fog {
+  background: url("Climate/fog.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
+body.weather-windy {
+  background: url("Climate/wind.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
+body.weather-night {
+  background: url("Climate/Night.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
+body.weather-default {
+  background: url("Climate/partly cloudy.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
+
+@media screen and (max-width: 768px) {
+  .search-box input { width: 70%; }
+  .weather-card { flex-direction: column; align-items: flex-start; }
+  .details { flex-direction: column; align-items: center; }
+  .navbar { flex-direction: column; gap: 10px; }
+}
