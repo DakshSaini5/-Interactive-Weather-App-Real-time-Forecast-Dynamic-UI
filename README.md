@@ -19,8 +19,7 @@ This is a **responsive weather forecasting web application** built using **HTML,
 - OpenWeather API
 
 ## 🌐 Live Demo
-
-[Click here to view the live project](#) *(replace this with your actual deployed link)*
+https://weatherdekhiye.netlify.app/  
 
 ## 📸 Screenshots
 
